@@ -1,0 +1,26 @@
+module module-A {
+  yang-version 1.1;
+
+  namespace
+    "urn:ietf:params:xml:ns:yang:module-A";
+  prefix "vA";
+
+  organization "Not very";
+
+  contact "WG Web:   <http://tools.ietf.org/wg/anima/>";
+  description "This is module A";
+
+  revision "2022-11-13" { description "Initial version";
+    reference "RFC 8366: Voucher Profile for Bootstrapping Protocols";
+  }
+
+  grouping module-A {
+    description "Grouping for module A";
+    leaf attribute-A-Alpha {
+      type binary;
+      description "Alpha";
+    }
+  }
+
+}
+
