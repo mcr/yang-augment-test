@@ -1,0 +1,47 @@
+module module-B2 {
+  yang-version 1.1;
+
+  namespace
+    "urn:ietf:params:xml:ns:yang:module-B";
+  prefix "vB2";
+
+  import ietf-restconf {
+    prefix rc;
+    description "restconf";
+    reference "RFC8040: RESTCONF";
+  }
+
+  import module-A {
+    prefix "vA";
+  }
+
+  organization "Not very";
+
+  contact "WG Web:   <http://tools.ietf.org/wg/anima/>";
+  description "This is module B2";
+
+  revision "2022-11-13" { description "Initial version";
+    reference "RFC 8366: Voucher Profile for Bootstrapping Protocols";
+  }
+
+  rc:yang-data module-B2-artifact {
+    // YANG data template for a voucher.
+    uses module-B2-grouping;
+  }
+
+  grouping module-B2-grouping {
+    description "Grouping for module B";
+
+    uses vA:module-A-grouping {
+
+      augment "module-A-things" {
+        leaf attribute-B-Alpha {
+          type binary;
+          description "BetaTwo";
+        }
+      }
+    }
+  }
+
+}
+
