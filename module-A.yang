@@ -5,6 +5,12 @@ module module-A {
     "urn:ietf:params:xml:ns:yang:module-A";
   prefix "vA";
 
+  import ietf-restconf {
+    prefix rc;
+    description "restconf";
+    reference "RFC8040: RESTCONF";
+  }
+
   organization "Not very";
 
   contact "WG Web:   <http://tools.ietf.org/wg/anima/>";
@@ -14,11 +20,18 @@ module module-A {
     reference "RFC 8366: Voucher Profile for Bootstrapping Protocols";
   }
 
-  grouping module-A {
+  rc:yang-data module-A-artifact {
+    // YANG data template for a voucher.
+    uses module-A-grouping;
+  }
+
+  grouping module-A-grouping {
     description "Grouping for module A";
-    leaf attribute-A-Alpha {
-      type binary;
-      description "Alpha";
+    container module-A-things {
+      leaf attribute-A-Alpha {
+        type binary;
+        description "Alpha";
+      }
     }
   }
 
