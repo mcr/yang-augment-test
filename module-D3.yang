@@ -1,0 +1,55 @@
+module module-D3 {
+  yang-version 1.1;
+
+  namespace
+    "urn:ietf:params:xml:ns:yang:module-D3";
+  prefix "vD3";
+
+  import ietf-yang-structure-ext {
+    prefix sx;
+  }
+
+  import module-A3 {
+    prefix "vA3";
+  }
+
+  import module-B3 {
+    prefix "vB3";
+  }
+
+  import module-C3 {
+    prefix "vC3";
+  }
+
+  organization "Not very";
+
+  contact "WG Web:   <http://tools.ietf.org/wg/anima/>";
+  description "This is module D3";
+
+  revision "2022-11-13" { description "Initial version";
+    reference "RFC 8366: Voucher Profile for Bootstrapping Protocols";
+  }
+
+  sx:structure module-D-things {
+    uses module-D;
+  }
+
+  grouping module-D {
+    description "A module D structure";
+    container module-D {
+      description "A wrapper container for the module-D things";
+      uses vA3:module-A-contents;
+      uses vB3:module-B-contents;
+      uses vC3:module-C-contents;
+      uses module-D-contents;
+    }
+  }
+
+  grouping module-D-contents {
+    leaf attribute-D-Delta {
+      type binary;
+      description "DeltaThree";
+    }
+  }
+}
+

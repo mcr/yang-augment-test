@@ -1,0 +1,46 @@
+module module-B3 {
+  yang-version 1.1;
+
+  namespace
+    "urn:ietf:params:xml:ns:yang:module-B3";
+  prefix "vB3";
+
+  import ietf-yang-structure-ext {
+    prefix sx;
+  }
+
+  import module-A3 {
+    prefix "vA3";
+  }
+
+  organization "Not very";
+
+  contact "WG Web:   <http://tools.ietf.org/wg/anima/>";
+  description "This is module B3";
+
+  revision "2022-11-13" { description "Initial version";
+    reference "RFC 8366: Voucher Profile for Bootstrapping Protocols";
+  }
+
+  sx:structure module-B-things {
+    uses module-B;
+  }
+
+  grouping module-B {
+    description "A module B structure";
+    container module-B {
+      description "A wrapper container for the module-B things";
+      uses vA3:module-A-contents;
+      uses module-B-contents;
+    }
+  }
+
+  grouping module-B-contents {
+    leaf attribute-B-Beta {
+      type binary;
+      description "BetaTwo";
+    }
+  }
+
+}
+

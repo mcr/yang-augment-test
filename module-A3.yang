@@ -1,0 +1,31 @@
+module module-A3 {
+  yang-version 1.1;
+  namespace
+    "urn:ietf:params:xml:ns:yang:module-A3";
+  prefix "vA3";
+
+  import ietf-yang-structure-ext {
+    prefix sx;
+  }
+
+  sx:structure module-A-things {
+    uses module-A;
+  }
+
+  grouping module-A {
+    description "A module A structure";
+    container module-A {
+      description "A wrapper container for the module-A things";
+      uses module-A-contents;
+    }
+  }
+
+  grouping module-A-contents {
+    leaf attribute-A-Alpha {
+      type binary;
+      description "Alpha";
+    }
+  }
+}
+
+
