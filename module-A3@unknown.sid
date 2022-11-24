@@ -1,0 +1,17 @@
+{
+  "assignment-ranges": [
+    {
+      "entry-point": 62450,
+      "size": 50
+    }
+  ],
+  "module-name": "module-A3",
+  "module-revision": "unknown",
+  "items": [
+    {
+      "namespace": "module",
+      "identifier": "module-A3",
+      "sid": 62450
+    }
+  ]
+}
