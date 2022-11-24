@@ -1,0 +1,66 @@
+
+MODULE A
+module: module-A3
+
+  grouping module-A:
+    +-- module-A
+       +-- attribute-A-Alpha?   binary
+  grouping module-A-contents:
+    +-- attribute-A-Alpha?   binary
+
+SID        Assigned to
+---------  --------------------------------------------------
+62450      module module-A3
+
+File module-A3@unknown.sid created
+Number of SIDs available : 50
+Number of SIDs used : 1
+
+MODULE B
+module: module-B3
+
+  grouping module-B:
+    +-- module-B
+       +-- attribute-A-Alpha?   binary
+       +-- attribute-B-Beta?    binary
+  grouping module-B-contents:
+    +-- attribute-B-Beta?   binary
+
+SID        Assigned to
+---------  --------------------------------------------------
+62450      module module-A3
+62451      module module-B3 (New)
+
+File module-B3@2022-11-13.sid updated
+Number of SIDs available : 50
+Number of SIDs used : 2
+
+MODULE C
+module: module-C3
+
+  grouping module-C:
+    +-- module-C
+       +-- attribute-A-Alpha?   binary
+       +-- attribute-C-Gamma?   binary
+  grouping module-C-contents:
+    +-- attribute-C-Gamma?   binary
+
+SID        Assigned to
+---------  --------------------------------------------------
+62450      module module-A3
+62451      module module-C3 (New)
+
+File module-C3@2022-11-13.sid updated
+Number of SIDs available : 50
+Number of SIDs used : 2
+
+MODULE D
+
+SID        Assigned to
+---------  --------------------------------------------------
+62450      module module-A3
+62451      module module-D3 (New)
+
+File module-D3@2022-11-13.sid updated
+Number of SIDs available : 50
+Number of SIDs used : 2
